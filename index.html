@@ -228,7 +228,7 @@
 				<use xlink:href="img/icons.svg#sign-in"></use>
 			</svg>
 		</registration-form>
-		<dialog id="instructions">
+		<dialog id="instructions" class="animation-speed-normal animation-ease-in-out fadeInUp card shadow">
 			<h2>Agree to these terms</h2>
 			<section>
 				<h4 class="center">Section One</h4>
@@ -241,8 +241,12 @@
 				<p>Quo omnis adipisci dignissimos fuga aliquid blanditiis minima. Deleniti quis inventore aspernatur ut repellat rem. Id est et et atque assumenda. Totam aut consequatur et est ad odit qui id. Necessitatibus perspiciatis consequatur quibusdam.</p>
 			</section>
 			<hr />
-			<button type="button" class="btn btn-confirm" data-close="#instructions">Accept</button>
-			<button type="button" class="btn btn-reject" data-close="#instructions">Reject</button>
+			<button type="button" class="btn btn-confirm" data-close="#instructions">
+				<svg class="current-color icon">
+					<use xlink:href="/img/icons.svg#check" />
+				</svg>
+				<span>Agree</span>
+			</button>
 		</dialog>
 	</body>
 </html>

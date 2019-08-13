@@ -1,4 +1,4 @@
-import {$} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import {$, waitUntil} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 import PaymentRequestShim from 'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js';
 
 if (! ('PaymentRequest' in window)) {
@@ -18,6 +18,7 @@ class RaftingTripElement extends HTMLElement {
 
 			$('form', doc).submit(async event => {
 				event.preventDefault();
+				const terms = document.getElementById('instructions');
 				const {adults, children} = Object.fromEntries(new FormData(event.target).entries());
 				const displayItems = [{
 					label: `Adults (${adults})`,
@@ -52,6 +53,9 @@ class RaftingTripElement extends HTMLElement {
 					requestPayerEmail: true,
 					requestPayerPhone: true,
 				});
+
+				terms.showModal();
+				await waitUntil(terms, 'close');
 
 				if (await paymentRequest.canMakePayment()) {
 					const paymentResponse = await paymentRequest.show();
