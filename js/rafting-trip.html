@@ -19,9 +19,9 @@
 				<blockquote>No description available</blockquote>
 			</slot>
 			<form name="bookings">
-				<label for="adults">Adults:</label>
+				<label for="adults">Adults: <slot name="adultPrice"></slot></label>
 				<input id="adults" type="number" min="1" value="1" max="99" name="adults" required="" />
-				<label for="children">Children:</label>
+				<label for="children">Children: <slot name="childPrice"></slot></label>
 				<input type="number" id="children" name="children" min="0" value="0" max="99" required="" />
 				<br />
 				<div class="clearfix">
