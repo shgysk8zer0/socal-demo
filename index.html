@@ -65,15 +65,24 @@
 				<svg class="current-color filter-shadow">
 					<use xlink:href="/img/icons.svg#logo" />
 				</svg>
-				<address >
+				<schema-postal-address>
+					<svg class="current-color icon" slot="icon">
+						<use xlink:href="/img/icons.svg#mark-location" />
+					</svg>
+					<span slot="streetAddress">234 Some St.</span>
+					<span slot="addressLocality">Nowhere</span>
+					<span slot="addressRegion">CA</span>
+					<meta slot="postalCode" content="98765" />
+					<meta slot="addressCountry" content="US" />
+				</schema-postal-address>
+				<address hidden="">
 					<div>
 						<svg class="current-color icon">
 							<use xlink:href="/img/icons.svg#mark-location" />
 						</svg>
-						<span>234 Some St.</span>
 					</div>
 					<div>
-						<span>Anywhere</span>,
+						<span>Nowhere</span>,
 						<span>CA</span>
 						<span>98765</span>
 					</div>
@@ -108,16 +117,16 @@
 			<div itemtype="https://schema.org/Organization" itemscope="">
 				<h3 itemprop="name">Acme Rafting</h3>
 				<img src="/img/icon-192.png" height="192" width="192" itemprop="logo image" decoding="async" alt="logo" />
-				<address itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
-					<svg class="current-color icon">
+				<schema-postal-address itemtype="https://schema.org/PostalAddress" itemscope="">
+					<svg class="current-color icon" slot="icon">
 						<use xlink:href="/img/icons.svg#mark-location" />
 					</svg>
-					<span  itemprop="streetAddress">123 Some St.</span>
-					<span itemprop="addressLocality">Nowhere</span>,
-					<span itemprop="addressRegion">CA</span>
-					<meta itemprop="postalCode" content="12345" />
-					<meta itemprop="addressCountry" content="US" />
-				</address>
+					<span slot="streetAddress" itemprop="streetAddress">234 Some St.</span>
+					<span slot="addressLocality" itemprop="addressLocality">Nowhere</span>
+					<span slot="addressRegion" itemprop="addressRegion">CA</span>
+					<meta slot="postalCode" itemprop="postalCode" content="98765" />
+					<meta slot="addressCountry" itemprop="addressCountry" content="US" />
+				</schema-postal-address>
 				<a href="mailto:admin@kernvalley.us" itemprop="email" content="admin@kernvalley.us" class="block">
 					<svg class="current-color icon">
 						<use xlink:href="/img/icons.svg#mail" />
@@ -251,5 +260,20 @@
 				<span>Agree</span>
 			</button>
 		</dialog>
+		<template id="postal-address-template">
+			<address>
+				<div>
+					<slot name="streetAddress"></slot>
+					<br />
+					<slot name="postalOfficeBoxNumber"></slot>
+				</div>
+				<div>
+					<slot name="addressLocality"></slot>,
+					<slot name="addressRegion"></slot>
+					<slot name="postalCode"></slot>
+					<slot name="addressCountry"></slot>
+				</div>
+			</address>
+		</template>
 	</body>
 </html>
