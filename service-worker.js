@@ -5,6 +5,9 @@ const config = {
 	stale: [
 		'/',
 		'/js/index.js',
+		'/js/offer-catelog.js',
+		'/js/rafting-trip.js',
+		'/js/rafting-trip.html',
 		'https://cdn.kernvalley.us/components/js/share-button.js',
 		'https://cdn.kernvalley.us/components/js/share-config.js',
 		'https://cdn.kernvalley.us/components/js/current-year.js',
@@ -25,6 +28,13 @@ const config = {
 		'https://cdn.kernvalley.us/components/registration-form/registration-form.js',
 		'https://cdn.kernvalley.us/components/login-form/login-form.html',
 		'https://cdn.kernvalley.us/components/registration-form/registration-form.html',
+		'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js',
+		'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequestUpdateEvent.js',
+		'https://cdn.kernvalley.us/js/PaymentAPI/PaymentAddress.js',
+		'https://cdn.kernvalley.us/js/PaymentAPI/PaymentResponse.js',
+		'https://cdn.kernvalley.us/js/PaymentAPI/BasicCardResponse.js',
+		'https://cdn.kernvalley.us/js/PaymentAPI/BillingAddress.js',
+		'https://cdn.kernvalley.us/components/payment-form/payment-form.js',
 		'/css/index.css',
 		'/css/vars.css',
 		'/css/layout.css',
@@ -57,6 +67,7 @@ const config = {
 		'https://cdn.kernvalley.us/img/adwaita-icons/actions/mail-send.svg',
 		'https://cdn.kernvalley.us/img/logos/instagram.svg',
 		'https://cdn.kernvalley.us/fonts/roboto.woff2',
+		'/trips.json',
 	].map(path => new URL(path, location.origin).href),
 };
 
