@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/shgysk8zer0/improved-octo-succotash/issues"
   },
-  "homepage": "https://github.com/shgysk8zer0/improved-octo-succotash",
+  "homepage": "https://zealous-cray-ab03c3.netlify.com/",
   "scripts": {
     "preinstall": "git submodule update --recursive --init",
     "postinstall": "npm run build:icons",
