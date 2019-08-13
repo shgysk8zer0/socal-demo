@@ -1,16 +1,18 @@
 'use strict';
 
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a2',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a3',
 	stale: [
 		'/',
 		'/js/index.js',
 		'/js/offer-catelog.js',
 		'/js/rafting-trip.js',
 		'/js/rafting-trip.html',
-		'https://cdn.kernvalley.us/components/js/share-button.js',
-		'https://cdn.kernvalley.us/components/js/share-config.js',
-		'https://cdn.kernvalley.us/components/js/current-year.js',
+		'/js/schema-postal-address.js',
+		'/js/schema-postal-address.html',
+		'https://cdn.kernvalley.us/components/share-button.js',
+		'https://cdn.kernvalley.us/js/std-js/share-config.js',
+		'https://cdn.kernvalley.us/components/current-year.js',
 		'https://cdn.kernvalley.us/js/std-js/deprefixer.js',
 		'https://cdn.kernvalley.us/js/std-js/shims.js',
 		'https://cdn.kernvalley.us/js/std-js/md5.js',

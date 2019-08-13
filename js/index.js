@@ -7,6 +7,7 @@ import 'https://cdn.kernvalley.us/components/logout-button.js';
 import 'https://cdn.kernvalley.us/components/register-button.js';
 import 'https://cdn.kernvalley.us/components/login-form/login-form.js';
 import 'https://cdn.kernvalley.us/components/registration-form/registration-form.js';
+import './schema-postal-address.js';
 import {$, ready, registerServiceWorker} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 
 import './offer-catelog.js';

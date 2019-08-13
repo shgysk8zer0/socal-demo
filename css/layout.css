@@ -10,6 +10,12 @@ body.grid {
 	grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
 }
 
+offer-catelog {
+	grid-template-columns: repeat(auto-fill, minmax(400px, 550px));
+	grid-template-rows: repeat(auto-fill, minmax(400px, 550px));
+	grid-gap: 0.8rem;
+}
+
 .content {
 	margin: 1.2em;
 	padding: 0.4em 1.4em;
@@ -26,6 +32,11 @@ fieldset {
 legend {
 	font-size: 1.4em;
 	font-weight: bold;
+}
+
+dialog {
+	max-heigh: 90vh;
+	overflow: auto;
 }
 
 .no-margins {
@@ -59,6 +70,11 @@ button[is="share-button"] {
 	border-radius: 50%;
 	padding: 0.8rem;
 	font-size: 1.5rem;
+}
+
+#instructions[open] {
+	width: 800px;
+	max-width: 80vw;
 }
 
 @media (max-width: 800px) {

@@ -65,15 +65,24 @@
 				<svg class="current-color filter-shadow">
 					<use xlink:href="/img/icons.svg#logo" />
 				</svg>
-				<address >
+				<schema-postal-address>
+					<svg class="current-color icon" slot="icon">
+						<use xlink:href="/img/icons.svg#mark-location" />
+					</svg>
+					<span slot="streetAddress">234 Some St.</span>
+					<span slot="addressLocality">Nowhere</span>
+					<span slot="addressRegion">CA</span>
+					<meta slot="postalCode" content="98765" />
+					<meta slot="addressCountry" content="US" />
+				</schema-postal-address>
+				<address hidden="">
 					<div>
 						<svg class="current-color icon">
 							<use xlink:href="/img/icons.svg#mark-location" />
 						</svg>
-						<span>234 Some St.</span>
 					</div>
 					<div>
-						<span>Anywhere</span>,
+						<span>Nowhere</span>,
 						<span>CA</span>
 						<span>98765</span>
 					</div>
@@ -84,17 +93,20 @@
 			<button type="button" class="btn btn-primary" is="login-button">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#sign-in"></use>
+					<span class="mobile-hidden">Sign In</span>
 				</svg>
 			</button>
 			<button type="button" class="btn btn-primary" is="register-button">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#contact-new"></use>
 				</svg>
+				<span class="mobile-hidden">Register</span>
 			</button>
 			<button type="button" class="btn btn-reject" is="logout-button" hidden="">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#sign-out"></use>
 				</svg>
+				<span class="mobile-hidden">Sign Out</span>
 			</button>
 		</nav>
 		<main>
@@ -102,46 +114,79 @@
 		</main>
 		<aside id="sidebar"></aside>
 		<footer id="footer" class="background-contrast color-alt">
-			<div class="social-links cols-2">
-				<div class="cols inline-block">
-					<a class="block" href="https://github.com/shgysk8zer0/" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#mark-github" />
-						</svg>
-						<span>GitHub Profile</span>
-					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#repo" />
-						</svg>
-						<span>GitHub Repo</span>
-					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash/issues" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#issue-opened" />
-						</svg>
-						<span>Report a Problem</span>
-					</a>
-				</div>
-				<div class="cols inline-block">
-					<a class="block" href="https://shgysk8zer0.github.io" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#web-browser" />
-						</svg>
-						<span>My Website</span>
-					</a>
-					<a class="block" href="https://twitter.com/shgysk8zer0" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="icon social-icon">
-							<use xlink:href="/img/icons.svg#twitter" />
-						</svg>
-						<span>On Twitter</span>
-					</a>
-					<a class="block" href="https://www.linkedin.com/in/chris-zuber-455346141/" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="icon social-icon">
-							<use xlink:href="/img/icons.svg#linkedin" />
-						</svg>
-						<span>LinkedIn</span>
-					</a>
+			<div itemtype="https://schema.org/Organization" itemscope="">
+				<h3 itemprop="name">Acme Rafting</h3>
+				<img src="/img/icon-192.png" height="192" width="192" itemprop="logo image" decoding="async" alt="logo" />
+				<schema-postal-address itemtype="https://schema.org/PostalAddress" itemscope="">
+					<svg class="current-color icon" slot="icon">
+						<use xlink:href="/img/icons.svg#mark-location" />
+					</svg>
+					<span slot="streetAddress" itemprop="streetAddress">234 Some St.</span>
+					<span slot="addressLocality" itemprop="addressLocality">Nowhere</span>
+					<span slot="addressRegion" itemprop="addressRegion">CA</span>
+					<meta slot="postalCode" itemprop="postalCode" content="98765" />
+					<meta slot="addressCountry" itemprop="addressCountry" content="US" />
+				</schema-postal-address>
+				<a href="mailto:admin@kernvalley.us" itemprop="email" content="admin@kernvalley.us" class="block">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#mail" />
+					</svg>
+					<span>admin@kernvalley.us</span>
+				</a>
+				<a href="tel:+1-661-61-61712" itemprop="telephone" content="+1-661-619-6712" class="block">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#call-start" />
+					</svg>
+					<span>(661) 619-6712</span>
+				</a>
+				<a href="https://zealous-cray-ab03c3.netlify.com" itemprop="url" class="block">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#globe" />
+					</svg>
+					<span>zealous-cray-ab03c3.netlify.com</span>
+				</a>
+				<hr />
+				<div class="social-links cols-2">
+					<div class="cols inline-block">
+						<a class="block" href="https://github.com/shgysk8zer0/" target="_blank" rel="external noopener">
+							<svg class="current-color icon social-icon">
+								<use xlink:href="/img/icons.svg#mark-github" />
+							</svg>
+							<span>GitHub Profile</span>
+						</a>
+						<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash" target="_blank" rel="external noopener">
+							<svg class="current-color icon social-icon">
+								<use xlink:href="/img/icons.svg#repo" />
+							</svg>
+							<span>GitHub Repo</span>
+						</a>
+						<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash/issues" target="_blank" rel="external noopener">
+							<svg class="current-color icon social-icon">
+								<use xlink:href="/img/icons.svg#issue-opened" />
+							</svg>
+							<span>Report a Problem</span>
+						</a>
+					</div>
+					<div class="cols inline-block">
+						<a class="block" href="https://shgysk8zer0.github.io" target="_blank" rel="external noopener" itemprop="sameAs">
+							<svg class="current-color icon social-icon">
+								<use xlink:href="/img/icons.svg#web-browser" />
+							</svg>
+							<span>My Website</span>
+						</a>
+						<a class="block" href="https://twitter.com/shgysk8zer0" target="_blank" rel="external noopener" itemprop="sameAs">
+							<svg class="icon social-icon">
+								<use xlink:href="/img/icons.svg#twitter" />
+							</svg>
+							<span>On Twitter</span>
+						</a>
+						<a class="block" href="https://www.linkedin.com/in/chris-zuber-455346141/" target="_blank" rel="external noopener" itemprop="sameAs">
+							<svg class="icon social-icon">
+								<use xlink:href="/img/icons.svg#linkedin" />
+							</svg>
+							<span>LinkedIn</span>
+						</a>
+					</div>
 				</div>
 			</div>
 			<hr />
@@ -195,5 +240,25 @@
 				<use xlink:href="img/icons.svg#sign-in"></use>
 			</svg>
 		</registration-form>
+		<dialog id="instructions" class="animation-speed-normal animation-ease-in-out fadeInUp card shadow">
+			<h2>Agree to these terms</h2>
+			<section>
+				<h4 class="center">Section One</h4>
+				<p>Aliquid voluptas neque amet et dolore perspiciatis perferendis in. In quia repellendus praesentium quisquam voluptas quia. Ea laudantium et dolorem dolorum aut. Qui molestias nisi culpa nobis id maxime sint. Minima qui fugiat est.</p>
+				<p>Ipsum aut error tempora. Voluptas aut voluptatem praesentium et sint modi illum modi. Sint accusamus optio dignissimos ab enim.</p>
+			</section>
+			<section>
+				<h4 class="center">Section Two</h4>
+				<p>Maxime ea non id ut in repudiandae. Nemo voluptates non quae corrupti aut repellat. Et asperiores autem neque ut quam maxime omnis reiciendis.</p>
+				<p>Quo omnis adipisci dignissimos fuga aliquid blanditiis minima. Deleniti quis inventore aspernatur ut repellat rem. Id est et et atque assumenda. Totam aut consequatur et est ad odit qui id. Necessitatibus perspiciatis consequatur quibusdam.</p>
+			</section>
+			<hr />
+			<button type="button" class="btn btn-confirm" data-close="#instructions">
+				<svg class="current-color icon">
+					<use xlink:href="/img/icons.svg#check" />
+				</svg>
+				<span>Agree</span>
+			</button>
+		</dialog>
 	</body>
 </html>

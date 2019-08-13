@@ -1,4 +1,4 @@
-import {$} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import {$, waitUntil} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 import PaymentRequestShim from 'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js';
 
 if (! ('PaymentRequest' in window)) {
@@ -8,15 +8,31 @@ if (! ('PaymentRequest' in window)) {
 class RaftingTripElement extends HTMLElement {
 	constructor() {
 		super();
+		this.setAttribute('itemtype', 'https://schema.org/Event');
+		this.setAttribute('itemscope', '');
 		this.attachShadow({mode: 'open'});
 		fetch(new URL('/js/rafting-trip.html', document.baseURI)).then(async resp => {
 			const parser = new DOMParser();
 			const html = await resp.text();
 			const doc = parser.parseFromString(html, 'text/html');
+
 			$('form', doc).submit(async event => {
 				event.preventDefault();
-				const data = Object.fromEntries(new FormData(event.target).entries());
-				console.log(data);
+				const terms = document.getElementById('instructions');
+				const {adults, children} = Object.fromEntries(new FormData(event.target).entries());
+				const displayItems = [{
+					label: `Adults (${adults})`,
+					amount: {
+						currency: 'USD',
+						value: parseInt(adults) * 85
+					}
+				},{
+					label: `Children (${children})`,
+					amount: {
+						currency: 'USD',
+						value: parseInt(children) * 45.5
+					}
+				}];
 				const paymentRequest = new PaymentRequest([{
 					supportedMethods: 'basic-card',
 					data: {
@@ -24,31 +40,22 @@ class RaftingTripElement extends HTMLElement {
 						supportedTypes: ['credit', 'debit']
 					}
 				}], {
+					displayItems,
 					total: {
 						label: 'Total Cost',
 						amount: {
 							currency: 'USD',
-							value: 468.75
+							value: displayItems.reduce((sum, item) => sum + item.amount.value, 0),
 						}
-					},
-					displayItems: [{
-						label: 'Adults (3)',
-						amount: {
-							currency: 'USD',
-							value: 255.00
-						}
-					},{
-						label: 'Children (5)',
-						amount: {
-							currency: 'USD',
-							value: 213.75
-						}
-					}],
+					}
 				}, {
 					requestPayerName: true,
 					requestPayerEmail: true,
 					requestPayerPhone: true,
 				});
+
+				terms.showModal();
+				await waitUntil(terms, 'close');
 
 				if (await paymentRequest.canMakePayment()) {
 					const paymentResponse = await paymentRequest.show();
@@ -63,6 +70,7 @@ class RaftingTripElement extends HTMLElement {
 	set name(val) {
 		const el = document.createElement('span');
 		el.slot = 'name';
+		el.setAttribute('itemprop', 'name');
 		el.textContent = val;
 		this.append(el);
 	}
@@ -70,6 +78,7 @@ class RaftingTripElement extends HTMLElement {
 	set description(val) {
 		const el = document.createElement('blockquote');
 		el.slot = 'description';
+		el.setAttribute('itemprop', 'description');
 		el.textContent = val;
 		this.append(el);
 	}
@@ -78,6 +87,7 @@ class RaftingTripElement extends HTMLElement {
 		const img = new Image(width, height);
 		img.decoding = 'async';
 		img.src = url;
+		img.setAttribute('itemprop', 'image');
 		img.slot = 'image';
 		this.append(img);
 	}
