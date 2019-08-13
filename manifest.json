@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "start_url": "/",
   "lang": "en",
-  "description": "",
+  "description": "A quick rafting demo PWA",
   "icons": [{
     "src": "/img/favicon.svg",
     "sizes": "any",
@@ -18,7 +18,12 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
-  "theme_color": "#528ff9",
+  "screenshots": [{
+    "src": "https://i.imgur.com/oeKJKPNl.jpg",
+    "sizes": "640x427",
+    "type": "image/jpeg"
+  }],
+  "theme_color": "#3ba435",
   "background_color": "#fefefe",
   "display": "standalone",
   "developer": {
