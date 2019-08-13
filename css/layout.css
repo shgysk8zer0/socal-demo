@@ -7,7 +7,7 @@
 body.grid {
 	grid-template-areas: 'header header header' 'nav nav nav' '. main sidebar' 'footer footer footer';
 	grid-template-rows: calc(100vh - var(--nav-height)) var(--nav-height) minmax(600px, auto) auto;
-	grid-template-columns: 1fr minmax(350px, 1000px) 1fr;
+	grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
 }
 
 .content {
@@ -112,3 +112,4 @@ button[is="share-button"] {
 [data-flex-shrink="4"] {
 	flex-shrink: 4;
 }
+

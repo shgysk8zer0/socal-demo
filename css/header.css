@@ -1,3 +1,41 @@
 #header {
 	grid-area: header;
+	background-image: var(--header-bg-h);
+}
+
+#header-contact {
+	position: relative;
+	top: calc(50vh - 8rem);
+	text-shadow: 6px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.header-floating-btn {
+	position: absolute;
+	top: 0.6rem;
+}
+
+#header-call {
+	left: 0.6rem;
+}
+
+#header-email {
+	right: 0.6rem;
+}
+
+@media (min-width: 1025px) {
+	#header {
+		background-image: var(--header-bg-full);
+	}
+}
+
+@media (max-width: 640px) {
+	#header {
+		background-image: var(--header-bg-l);
+	}
+}
+
+@media (max-width: 320px) {
+	#header {
+		background-image: var(--header-bg-m);
+	}
 }

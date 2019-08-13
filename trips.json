@@ -1,0 +1,113 @@
+[{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Trip One",
+  "description": "Row, row, row your boat...",
+  "location": {
+    "@type": "Place",
+    "Name": "Acme Rafting Co.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Some St.",
+      "addressLocality": "Nowhere",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  },
+  "isAccessibleForFree": false,
+  "image": [{
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/CObhuByh.jpg",
+    "width": 1024,
+    "height": 863
+  }, {
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/CObhuByl.jpg",
+    "width": 640,
+    "height": 427
+  }, {
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/CObhuBym.jpg",
+    "width": 320,
+    "height": 213
+  }],
+  "startDate": ["2019-08-20T11:00:00", "2019-08-20T12:30:00"],
+  "duration": "PT1H30M",
+  "offers": [{
+    "@type": "Offer",
+    "name": "Adult",
+    "price": 57.00,
+    "priceCurrency": "USD"
+  }, {
+    "@type": "Offer",
+    "name": "Child",
+    "price": 37.50,
+    "priceCurrency": "USD"
+  }],
+  "maximumAttendeeCapacity": 35,
+  "review": [{
+    "@type": "Review",
+    "author": "First Last",
+    "reviewBody": "These are words",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": 4
+    }
+  }]
+}, {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Trip Two",
+  "description": "Row, row, row your boat... AGAIN!",
+  "location": {
+    "@type": "Place",
+    "Name": "Acme Rafting Co.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Some St.",
+      "addressLocality": "Nowhere",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  },
+  "isAccessibleForFree": false,
+  "image": [{
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/CObhuByh.jpg",
+    "width": 1024,
+    "height": 863
+  }, {
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/CObhuByl.jpg",
+    "width": 640,
+    "height": 427
+  }, {
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/CObhuBym.jpg",
+    "width": 320,
+    "height": 213
+  }],
+  "startDate": ["2019-08-20T10:30:00", "2019-08-20T14:00:00"],
+  "duration": "PT5H30M",
+  "offers": [{
+    "@type": "Offer",
+    "name": "Adult",
+    "price": 85.00,
+    "priceCurrency": "USD"
+  }, {
+    "@type": "Offer",
+    "name": "Child",
+    "price": 42.75,
+    "priceCurrency": "USD"
+  }],
+  "maximumAttendeeCapacity": 35,
+  "review": [{
+    "@type": "Review",
+    "author": "First Last",
+    "reviewBody": "These are words",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": 4
+    }
+  }]
+}]

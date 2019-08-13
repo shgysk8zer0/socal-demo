@@ -5,20 +5,20 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="robots" content="follow,index" />
-		<meta name="description" content="" />
-		<meta itemprop="description" content="" />
-		<meta name="keywords" content="" />
-		<meta itemprop="keywords" content="" />
+		<meta name="description" content="A quick rafting demo" />
+		<meta itemprop="description" content="A quick rafting demo" />
+		<meta name="keywords" content="rafting, demo, pwa" />
+		<meta itemprop="keywords" content="rafting, demo, pwa" />
 		<meta name="referrer" content="origin-when-cross-origin"/>
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta itemprop="thumbnailUrl" content="" />
 		<!-- Social data -->
 		<!-- Facebook | OpenGraph -->
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="" />
+		<meta property="og:title" content="Rafting Demo" />
 		<meta property="og:url" content="" />
-		<meta property="og:description" content="" />
-		<meta property="og:keywords" content="" />
+		<meta property="og:description" content="A quick rafting demo" />
+		<meta property="og:keywords" content="rafting, demo, pwa" />
 		<meta property="og:image" content="" />
 		<meta property="og:image:height" content="" />
 		<meta property="og:image:width" content="" />
@@ -26,14 +26,14 @@
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:creator" content="" />
-		<meta name="twitter:description" content="" />
+		<meta name="twitter:description" content="A quick rafting demo" />
 		<meta name="twitter:image" content="" />
 		<!-- /Twitter -->
 		<!-- /Social data -->
 		<meta name="msapplication-TileColor" content="#528ff9" />
 		<meta name="msapplication-config" content="/browserconfig.xml" />
 		<meta name="theme-color" content="#528ff9" />
-		<title itemprop="headline"></title>
+		<title itemprop="headline">Rafting Demo</title>
 		<script type="module" src="/js/index.js" async=""></script>
 		<link rel="manifest" href="/manifest.json" />
 		<link rel="license" href="/LICENSE" />
@@ -47,9 +47,59 @@
 		<link rel="stylesheet" href="/css/index.css" media="all" />
 	</head>
 	<body id="top" class="grid font-main background-primary color-default">
-		<header id="header"></header>
-		<nav id="nav" class="sticky top shadow background-accent color-alt z-3"></nav>
-		<main></main>
+		<header id="header" class="background-cover background-fixed background-center color-alt">
+			<a href="tel:+1-661-619-6712" id="header-call" class="btn btn-default absolute header-floating-btn">
+				<svg class="current-color icon">
+					<use xlink:href="/img/icons.svg#call-start" />
+				</svg>
+				<span class="mobile-hidden">(661) 619-6712</span>
+			</a>
+			<a href="mailto:admin@kernvalley.us" id="header-email" class="btn btn-default absolute header-floating-btn">
+				<svg class="current-color icon">
+					<use xlink:href="/img/icons.svg#mail" />
+				</svg>
+				<span class="mobile-hidden">admin@kernvalley.us</span>
+			</a>
+			<div class="center animation-speed-normal animation-ease-in-out fadeInRight" id="header-contact">
+				<h1 class="center font-title">Acme Rafting</h1>
+				<svg class="current-color filter-shadow">
+					<use xlink:href="/img/icons.svg#logo" />
+				</svg>
+				<address >
+					<div>
+						<svg class="current-color icon">
+							<use xlink:href="/img/icons.svg#mark-location" />
+						</svg>
+						<span>234 Some St.</span>
+					</div>
+					<div>
+						<span>Anywhere</span>,
+						<span>CA</span>
+						<span>98765</span>
+					</div>
+				</address>
+			</div>
+		</header>
+		<nav id="nav" class="sticky top shadow color-alt z-3">
+			<button type="button" class="btn btn-primary" is="login-button">
+				<svg class="current-color icon">
+					<use xlink:href="img/icons.svg#sign-in"></use>
+				</svg>
+			</button>
+			<button type="button" class="btn btn-primary" is="register-button">
+				<svg class="current-color icon">
+					<use xlink:href="img/icons.svg#contact-new"></use>
+				</svg>
+			</button>
+			<button type="button" class="btn btn-reject" is="logout-button" hidden="">
+				<svg class="current-color icon">
+					<use xlink:href="img/icons.svg#sign-out"></use>
+				</svg>
+			</button>
+		</nav>
+		<main>
+			<offer-catelog class="grid"></offer-catelog>
+		</main>
 		<aside id="sidebar"></aside>
 		<footer id="footer" class="background-contrast color-alt">
 			<div class="social-links cols-2">
@@ -60,13 +110,13 @@
 						</svg>
 						<span>GitHub Profile</span>
 					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/static-template" target="_blank" rel="external noopener">
+					<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash" target="_blank" rel="external noopener">
 						<svg class="current-color icon social-icon">
 							<use xlink:href="/img/icons.svg#repo" />
 						</svg>
 						<span>GitHub Repo</span>
 					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/static-template/issues" target="_blank" rel="external noopener">
+					<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash/issues" target="_blank" rel="external noopener">
 						<svg class="current-color icon social-icon">
 							<use xlink:href="/img/icons.svg#issue-opened" />
 						</svg>
@@ -111,5 +161,39 @@
 				<use xlink:href="/img/icons.svg#public-share"></use>
 			</svg>
 		</button>
+		<login-form class="relative z-4">
+			<svg class="current-color icon" slot="submit-btn">
+				<use xlink:href="img/icons.svg#check"></use>
+			</svg>
+			<svg class="current-color icon" slot="reset-btn">
+				<use xlink:href="img/icons.svg#x"></use>
+			</svg>
+			<svg class="current-color icon" slot="username-label">
+				<use xlink:href="img/icons.svg#avatar-default"></use>
+			</svg>
+			<svg class="current-color icon" slot="password-label">
+				<use xlink:href="img/icons.svg#dialog-password"></use>
+			</svg>
+			<svg class="current-color icon" slot="register-btn">
+				<use xlink:href="img/icons.svg#contact-new"></use>
+			</svg>
+		</login-form>
+		<registration-form class="relative z-4">
+			<svg class="current-color icon" slot="submit-btn">
+				<use xlink:href="img/icons.svg#check"></use>
+			</svg>
+			<svg class="current-color icon" slot="reset-btn">
+				<use xlink:href="img/icons.svg#x"></use>
+			</svg>
+			<svg class="current-color icon" slot="username-label">
+				<use xlink:href="img/icons.svg#avatar-default"></use>
+			</svg>
+			<svg class="current-color icon" slot="password-label">
+				<use xlink:href="img/icons.svg#dialog-password"></use>
+			</svg>
+			<svg class="current-color icon" slot="login-btn">
+				<use xlink:href="img/icons.svg#sign-in"></use>
+			</svg>
+		</registration-form>
 	</body>
 </html>
