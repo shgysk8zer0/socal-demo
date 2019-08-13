@@ -10,6 +10,12 @@ body.grid {
 	grid-template-columns: 1fr minmax(350px, 1200px) 1fr;
 }
 
+offer-catelog {
+	grid-template-columns: repeat(auto-fill, minmax(400px, 550px));
+	grid-template-rows: repeat(auto-fill, minmax(400px, 550px));
+	grid-gap: 0.8rem;
+}
+
 .content {
 	margin: 1.2em;
 	padding: 0.4em 1.4em;
