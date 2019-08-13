@@ -102,46 +102,79 @@
 		</main>
 		<aside id="sidebar"></aside>
 		<footer id="footer" class="background-contrast color-alt">
-			<div class="social-links cols-2">
-				<div class="cols inline-block">
-					<a class="block" href="https://github.com/shgysk8zer0/" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#mark-github" />
-						</svg>
-						<span>GitHub Profile</span>
-					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#repo" />
-						</svg>
-						<span>GitHub Repo</span>
-					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash/issues" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#issue-opened" />
-						</svg>
-						<span>Report a Problem</span>
-					</a>
-				</div>
-				<div class="cols inline-block">
-					<a class="block" href="https://shgysk8zer0.github.io" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#web-browser" />
-						</svg>
-						<span>My Website</span>
-					</a>
-					<a class="block" href="https://twitter.com/shgysk8zer0" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="icon social-icon">
-							<use xlink:href="/img/icons.svg#twitter" />
-						</svg>
-						<span>On Twitter</span>
-					</a>
-					<a class="block" href="https://www.linkedin.com/in/chris-zuber-455346141/" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="icon social-icon">
-							<use xlink:href="/img/icons.svg#linkedin" />
-						</svg>
-						<span>LinkedIn</span>
-					</a>
+			<div itemtype="https://schema.org/Organization" itemscope="">
+				<h3 itemprop="name">Acme Rafting</h3>
+				<img src="/img/icon-192.png" height="192" width="192" itemprop="logo image" decoding="async" alt="logo" />
+				<address itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#mark-location" />
+					</svg>
+					<span  itemprop="streetAddress">123 Some St.</span>
+					<span itemprop="addressLocality">Nowhere</span>,
+					<span itemprop="addressRegion">CA</span>
+					<meta itemprop="postalCode" content="12345" />
+					<meta itemprop="addressCountry" content="US" />
+				</address>
+				<a href="mailto:admin@kernvalley.us" itemprop="email" content="admin@kernvalley.us" class="block">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#mail" />
+					</svg>
+					<span>admin@kernvalley.us</span>
+				</a>
+				<a href="tel:+1-661-61-61712" itemprop="telephone" content="+1-661-619-6712" class="block">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#call-start" />
+					</svg>
+					<span>(661) 619-6712</span>
+				</a>
+				<a href="https://zealous-cray-ab03c3.netlify.com" itemprop="url" class="block">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#globe" />
+					</svg>
+					<span>zealous-cray-ab03c3.netlify.com</span>
+				</a>
+				<hr />
+				<div class="social-links cols-2">
+					<div class="cols inline-block">
+						<a class="block" href="https://github.com/shgysk8zer0/" target="_blank" rel="external noopener">
+							<svg class="current-color icon social-icon">
+								<use xlink:href="/img/icons.svg#mark-github" />
+							</svg>
+							<span>GitHub Profile</span>
+						</a>
+						<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash" target="_blank" rel="external noopener">
+							<svg class="current-color icon social-icon">
+								<use xlink:href="/img/icons.svg#repo" />
+							</svg>
+							<span>GitHub Repo</span>
+						</a>
+						<a class="block" href="https://github.com/shgysk8zer0/improved-octo-succotash/issues" target="_blank" rel="external noopener">
+							<svg class="current-color icon social-icon">
+								<use xlink:href="/img/icons.svg#issue-opened" />
+							</svg>
+							<span>Report a Problem</span>
+						</a>
+					</div>
+					<div class="cols inline-block">
+						<a class="block" href="https://shgysk8zer0.github.io" target="_blank" rel="external noopener" itemprop="sameAs">
+							<svg class="current-color icon social-icon">
+								<use xlink:href="/img/icons.svg#web-browser" />
+							</svg>
+							<span>My Website</span>
+						</a>
+						<a class="block" href="https://twitter.com/shgysk8zer0" target="_blank" rel="external noopener" itemprop="sameAs">
+							<svg class="icon social-icon">
+								<use xlink:href="/img/icons.svg#twitter" />
+							</svg>
+							<span>On Twitter</span>
+						</a>
+						<a class="block" href="https://www.linkedin.com/in/chris-zuber-455346141/" target="_blank" rel="external noopener" itemprop="sameAs">
+							<svg class="icon social-icon">
+								<use xlink:href="/img/icons.svg#linkedin" />
+							</svg>
+							<span>LinkedIn</span>
+						</a>
+					</div>
 				</div>
 			</div>
 			<hr />

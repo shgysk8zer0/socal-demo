@@ -11,7 +11,6 @@ class OfferCatelogElement extends HTMLElement {
 			el.name = trip.name;
 			el.image = trip.image[2];
 			el.description = trip.description;
-			el.classList.add('card', 'shadow');
 			return el;
 		});
 		this.append(...els);
