@@ -55,6 +55,7 @@ class RaftingTripElement extends HTMLElement {
 				});
 
 				terms.showModal();
+				terms.scrollIntoView({block: 'start', behavior: 'smooth'});
 				await waitUntil(terms, 'close');
 
 				if (await paymentRequest.canMakePayment()) {
