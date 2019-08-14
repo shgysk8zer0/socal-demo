@@ -11,8 +11,7 @@ body.grid {
 }
 
 offer-catelog {
-	grid-template-columns: repeat(auto-fill, minmax(400px, 550px));
-	grid-template-rows: repeat(auto-fill, minmax(400px, 550px));
+	grid-template-columns: repeat(auto-fill, minmax(300px, 550px));
 	grid-gap: 0.8rem;
 }
 
@@ -32,11 +31,6 @@ fieldset {
 legend {
 	font-size: 1.4em;
 	font-weight: bold;
-}
-
-dialog {
-	max-heigh: 90vh;
-	overflow: auto;
 }
 
 .no-margins {
