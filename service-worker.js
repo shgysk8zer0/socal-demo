@@ -1,7 +1,7 @@
 'use strict';
 
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a4',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a5',
 	stale: [
 		/* Root document */
 		'/',
@@ -90,10 +90,7 @@ const config = {
 	].map(path => new URL(path, location.origin).href),
 	fresh: [
 	].map(path => new URL(path, location.origin).href),
-	allowed: [
-		'i.imgur.com',
-		'secure.gravatar.com',
-	],
+	allowed: [],
 };
 
 self.addEventListener('install', async () => {
