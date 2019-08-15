@@ -24,10 +24,16 @@
 				<blockquote>No description available</blockquote>
 			</slot>
 			<form name="bookings">
-				<label for="adults">Adults: <slot name="adultPrice"></slot></label>
-				<input id="adults" type="number" min="1" value="1" max="99" name="adults" required="" />
-				<label for="children">Children: <slot name="childPrice"></slot></label>
-				<input type="number" id="children" name="children" min="0" value="0" max="99" required="" />
+				<div class="flex row no-wrap">
+					<div class="form-group inline-block">
+						<label for="adults">Adults: <slot name="adultPrice"></slot></label>
+						<input id="adults" type="number" min="1" value="1" max="99" name="adults" required="" />
+					</div>
+					<div class="form-group inline-block">
+						<label for="children">Children: <slot name="childPrice"></slot></label>
+						<input type="number" id="children" name="children" min="0" value="0" max="99" required="" />
+					</div>
+				</div>
 				<br />
 				<div class="clearfix">
 					<button type="submit" class="btn btn-accept float-right">
