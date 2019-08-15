@@ -8,9 +8,13 @@ class OfferCatelogElement extends HTMLElement {
 		const trips = await resp.json();
 		const els = trips.map(trip => {
 			const el = new RaftingTripElement();
+			const adult = trip.offers.find(offer => offer.name.toLowerCase() === 'adult');
+			const child = trip.offers.find(offer => offer.name.toLowerCase() === 'child');
 			el.name = trip.name;
 			el.image = trip.image[2];
 			el.description = trip.description;
+			el.adultPrice = {value: adult.price, currency: adult.priceCurrency};
+			el.childPrice = {value: child.price, currency: child.priceCurrency};
 			return el;
 		});
 		this.append(...els);

@@ -1,5 +1,6 @@
 import {$, waitUntil} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 import PaymentRequestShim from 'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js';
+import {getSlotContent, removeSlottedElements} from './slot-helpers.js';
 
 if (! ('PaymentRequest' in window)) {
 	window.PaymentRequest = PaymentRequestShim;
@@ -24,13 +25,13 @@ class RaftingTripElement extends HTMLElement {
 					label: `Adults (${adults})`,
 					amount: {
 						currency: 'USD',
-						value: parseInt(adults) * 85
+						value: parseInt(adults) * this.adultPrice
 					}
 				},{
 					label: `Children (${children})`,
 					amount: {
 						currency: 'USD',
-						value: parseInt(children) * 45.5
+						value: parseInt(children) * this.childPrice
 					}
 				}];
 				const paymentRequest = new PaymentRequest([{
@@ -59,9 +60,17 @@ class RaftingTripElement extends HTMLElement {
 				await waitUntil(terms, 'close');
 
 				if (await paymentRequest.canMakePayment()) {
-					const paymentResponse = await paymentRequest.show();
-					paymentResponse.complete('success');
-					console.log(paymentResponse);
+					try {
+						const paymentResponse = await paymentRequest.show();
+						paymentResponse.complete('success');
+						$('#payment-dialog').remove();
+						console.log(paymentResponse);
+					} catch(err) {
+						console.error(err);
+						$('#payment-dialog').remove();
+					} finally {
+						$('#payment-dialog').remove();
+					}
 				}
 			});
 			this.shadowRoot.append(...doc.head.children, ...doc.body.children);
@@ -81,6 +90,33 @@ class RaftingTripElement extends HTMLElement {
 		el.slot = 'description';
 		el.setAttribute('itemprop', 'description');
 		el.textContent = val;
+		removeSlottedElements('description', this.shadowRoot);
+		this.append(el);
+	}
+
+	get adultPrice() {
+		return parseFloat(getSlotContent('adultPrice', this.shadowRoot).replace(/[^\d.]/g, ''));
+	}
+
+	set adultPrice({value, currency = 'USD'}) {
+		const el = document.createElement('span');
+		el.slot = 'adultPrice';
+		// el.setAttribute('itemprop', '');
+		el.textContent = Intl.NumberFormat(navigator.language, {style: 'currency', currency}).format(value);
+		removeSlottedElements('adultPrice', this.shadowRoot);
+		this.append(el);
+	}
+
+	get childPrice() {
+		return parseFloat(getSlotContent('childPrice', this.shadowRoot).replace(/[^\d.]/g, ''));
+	}
+
+	set childPrice({value, currency = 'USD'}) {
+		const el = document.createElement('span');
+		el.slot = 'childPrice';
+		// el.setAttribute('itemprop', '');
+		el.textContent = Intl.NumberFormat(navigator.language, {style: 'currency', currency}).format(value);
+		removeSlottedElements('childPricer', this.shadowRoot);
 		this.append(el);
 	}
 
@@ -90,6 +126,7 @@ class RaftingTripElement extends HTMLElement {
 		img.src = url;
 		img.setAttribute('itemprop', 'image');
 		img.slot = 'image';
+		removeSlottedElements('image', this.shadowRoot);
 		this.append(img);
 	}
 }
