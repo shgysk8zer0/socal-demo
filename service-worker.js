@@ -1,12 +1,13 @@
 'use strict';
 
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a7',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a8',
 	stale: [
 		/* Root document */
 		'/',
 
 		/* Other HTML */
+		'https://cdn.kernvalley.us/components/toast-message.html',
 		'https://cdn.kernvalley.us/components/login-form/login-form.html',
 		'https://cdn.kernvalley.us/components/registration-form/registration-form.html',
 		'/js/rafting-trip.html',
@@ -32,6 +33,7 @@ const config = {
 		'https://cdn.kernvalley.us/components/logout-button.js',
 		'https://cdn.kernvalley.us/components/register-button.js',
 		'https://cdn.kernvalley.us/components/gravatar-img.js',
+		'https://cdn.kernvalley.us/components/toast-message.js',
 		'https://cdn.kernvalley.us/js/std-js/asyncDialog.js',
 		'https://cdn.kernvalley.us/js/User.js',
 		'https://cdn.kernvalley.us/components/login-form/login-form.js',
