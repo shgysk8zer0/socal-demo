@@ -1,7 +1,7 @@
-import {$, waitUntil} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import {$} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 import PaymentRequestShim from 'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js';
 import {getSlotContent, removeSlottedElements} from './slot-helpers.js';
-
+import 'https://cdn.kernvalley.us/components/toast-message.js';
 if (! ('PaymentRequest' in window)) {
 	window.PaymentRequest = PaymentRequestShim;
 }
@@ -55,9 +55,9 @@ class RaftingTripElement extends HTMLElement {
 					requestPayerPhone: true,
 				});
 
-				terms.showModal();
-				terms.scrollIntoView({block: 'start', behavior: 'smooth'});
-				await waitUntil(terms, 'close');
+				await customElements.whenDefined('toast-message');
+				await terms.show();
+				await terms.closed;
 
 				if (await paymentRequest.canMakePayment()) {
 					try {
