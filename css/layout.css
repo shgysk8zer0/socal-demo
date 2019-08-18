@@ -66,11 +66,6 @@ button[is="share-button"] {
 	font-size: 1.5rem;
 }
 
-#instructions[open] {
-	width: 800px;
-	max-width: 80vw;
-}
-
 @media (max-width: 800px) {
 	.mobile-hidden {
 		display: none;
