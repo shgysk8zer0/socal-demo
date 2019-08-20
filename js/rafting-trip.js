@@ -20,7 +20,7 @@ class RaftingTripElement extends HTMLElement {
 			$('form', doc).submit(async event => {
 				event.preventDefault();
 				const terms = document.getElementById('instructions');
-				const {adults, children} = Object.fromEntries(new FormData(event.target).entries());
+				const {adults, children, departureTime, date, identifier} = Object.fromEntries(new FormData(event.target).entries());
 				const displayItems = [{
 					label: `Adults (${adults})`,
 					amount: {
@@ -65,15 +65,42 @@ class RaftingTripElement extends HTMLElement {
 						paymentResponse.complete('success');
 						$('#payment-dialog').remove();
 						console.log(paymentResponse);
+						await customElements.whenDefined('toast-message');
+						const Toast = customElements.get('toast-message');
+						const pre = document.createElement('pre');
+						const code = document.createElement('code');
+						const toast = new Toast();
+						pre.slot = 'content';
+						code.textContent = JSON.stringify({identifier, adults, children, departureTime, date, paymentResponse}, null, 4);
+						pre.append(code);
+						toast.append(pre);
+						document.body.append(toast);
+						await toast.show();
+						await toast.closed;
+						toast.remove();
 					} catch(err) {
 						console.error(err);
 						$('#payment-dialog').remove();
+						await customElements.whenDefined('toast-message');
+						const Toast = customElements.get('toast-message');
+						Toast.toast(err.message);
 					} finally {
 						$('#payment-dialog').remove();
 					}
 				}
 			});
 			this.shadowRoot.append(...doc.head.children, ...doc.body.children);
+			this.dispatchEvent(new Event('ready'));
+		});
+	}
+
+	get ready() {
+		return new Promise(resolve => {
+			if (this.shadowRoot !== null && this.shadowRoot.childElementCount !==0) {
+				resolve();
+			} else {
+				this.addEventListener('ready', () => resolve(), {once: true});
+			}
 		});
 	}
 
@@ -85,6 +112,11 @@ class RaftingTripElement extends HTMLElement {
 		this.append(el);
 	}
 
+	set identifier(uuid) {
+		this.id = uuid;
+		this.shadowRoot.querySelector('[name="identifier"]').value = uuid;
+	}
+
 	set description(val) {
 		const el = document.createElement('blockquote');
 		el.slot = 'description';
@@ -92,6 +124,20 @@ class RaftingTripElement extends HTMLElement {
 		el.textContent = val;
 		removeSlottedElements('description', this.shadowRoot);
 		this.append(el);
+	}
+
+	set departureTimes(times) {
+		if (Array.isArray(times)) {
+			const opts = times.map(time => {
+				const opt = document.createElement('option');
+				opt.value = time;
+				opt.textContent = new Date(`2000-01-01T${time}`).toLocaleTimeString();
+				return opt;
+			});
+			this.shadowRoot.querySelector('select[name="departureTime"]').append(...opts);
+		} else {
+			throw new Error('Expected an array of departure times');
+		}
 	}
 
 	get adultPrice() {
