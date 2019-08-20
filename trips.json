@@ -1,20 +1,23 @@
 [{
   "@context": "https://schema.org",
-  "@type": "Event",
+  "@type": "Trip",
+  "identifier": "c39b98f4-3230-428a-9c56-9224bbe21763",
   "name": "Trip One",
   "description": "Row, row, row your boat...",
-  "location": {
-    "@type": "Place",
-    "Name": "Acme Rafting Co.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Some St.",
-      "addressLocality": "Nowhere",
-      "addressRegion": "CA",
-      "addressCountry": "US"
+  "provider": {
+    "@type": "Organization",
+    "location": {
+      "@type": "Place",
+      "Name": "Acme Rafting Co.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Some St.",
+        "addressLocality": "Nowhere",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
     }
   },
-  "isAccessibleForFree": false,
   "image": [{
     "@type": "ImageObject",
     "url": "https://i.imgur.com/CObhuByh.jpg",
@@ -31,46 +34,40 @@
     "width": 320,
     "height": 213
   }],
-  "startDate": ["2019-08-20T11:00:00", "2019-08-20T12:30:00"],
-  "duration": "PT1H30M",
+  "arrivalTime": ["10:30:00-07:00", "12:00:00-07:00"],
+  "departureTime": ["11:00:00-07:00", "12:30:00-07:00"],
   "offers": [{
     "@type": "Offer",
     "name": "Adult",
     "price": 57.00,
-    "priceCurrency": "USD"
+    "priceCurrency": "USD",
+    "category": "https://schema.org/LeisureTimeActivity"
   }, {
     "@type": "Offer",
     "name": "Child",
     "price": 37.50,
     "priceCurrency": "USD"
-  }],
-  "maximumAttendeeCapacity": 35,
-  "review": [{
-    "@type": "Review",
-    "author": "First Last",
-    "reviewBody": "These are words",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": 4
-    }
   }]
 }, {
   "@context": "https://schema.org",
-  "@type": "Event",
+  "@type": "Trip",
+  "identifier": "50879514-127f-4bc8-9ac2-9300b751988d",
   "name": "Trip Two",
   "description": "Row, row, row your boat... AGAIN!",
-  "location": {
-    "@type": "Place",
-    "Name": "Acme Rafting Co.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Some St.",
-      "addressLocality": "Nowhere",
-      "addressRegion": "CA",
-      "addressCountry": "US"
+  "provider": {
+    "@type": "Organization",
+    "location": {
+      "@type": "Place",
+      "Name": "Acme Rafting Co.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Some St.",
+        "addressLocality": "Nowhere",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
     }
   },
-  "isAccessibleForFree": false,
   "image": [{
     "@type": "ImageObject",
     "url": "https://i.imgur.com/CObhuByh.jpg",
@@ -87,8 +84,8 @@
     "width": 320,
     "height": 213
   }],
-  "startDate": ["2019-08-20T10:30:00", "2019-08-20T14:00:00"],
-  "duration": "PT5H30M",
+  "arrivalTime": ["10:30:00-07:00", "12:00:00-07:00"],
+  "departureTime": ["11:00:00-07:00", "12:30:00-07:00"],
   "offers": [{
     "@type": "Offer",
     "name": "Adult",
@@ -99,15 +96,5 @@
     "name": "Child",
     "price": 42.75,
     "priceCurrency": "USD"
-  }],
-  "maximumAttendeeCapacity": 35,
-  "review": [{
-    "@type": "Review",
-    "author": "First Last",
-    "reviewBody": "These are words",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": 4
-    }
   }]
 }]
