@@ -1,100 +1,465 @@
 [{
-  "@context": "https://schema.org",
-  "@type": "Trip",
-  "identifier": "c39b98f4-3230-428a-9c56-9224bbe21763",
-  "name": "Trip One",
-  "description": "Row, row, row your boat...",
-  "provider": {
-    "@type": "Organization",
-    "location": {
-      "@type": "Place",
-      "Name": "Acme Rafting Co.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Some St.",
-        "addressLocality": "Nowhere",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      }
+    "@context": "https://schema.org",
+    "@type": "Trip",
+    "name": "Hollywood Hustle",
+    "url": "https://kernriverrafting.rezgo.com/details/38160/hollywood-hustle-kern-river-rafting-trip-3-mile-tour",
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Adult",
+            "price": "37.99",
+            "priceCurrency": "USD"
+        },
+        {
+            "@type": "Offer",
+            "name": "Child",
+            "price": "32.99",
+            "priceCurrency": "USD"
+        }
+    ],
+    "arrivalTime": [
+        "09:00",
+        "12:00",
+        "15:00"
+    ],
+    "departureTime": [
+        "09:00",
+        "12:00",
+        "15:00"
+    ],
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://s3.amazonaws.com/rezgo/5602/38160/92562.jpg",
+        "height": 411,
+        "width": 730
+    },
+    "description": "The Hollywood Hustle is SoCal's most affordable 3 mile Kern River rafting tour recommended for first timers. Your professional SoCal rafting guide will provide you with your river gear, a trip overview and paddle talk. Then on to three miles of class II-III whitewater rapids navigating the likes of Big Daddy, Sidewinder, Freight Train, and Ewings. Our Hollywood Hustle and Los Angeles Blitz rafting trips are the Kern River's most popular (and affordable) family rafting trips. Wetsuits may be required in the spring and are available for rent at our store.",
+    "provider": {
+        "@type": "Organization",
+        "name": "SoCal Rafting",
+        "url": "https://www.socalrafting.com/",
+        "email": "booking@socalrafting.com",
+        "telephone": "+1-888-537-6748",
+        "sameAs": [
+            "http://www.facebook.com/kernriverrafting",
+            "https://www.yelp.com/biz/socal-rafting-kernville",
+            "http://instagram.com/kernriverrafting",
+            "http://www.youtube.com/c/socalrafting"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/47074e_e3fd372c95924fc185ce4e614f46669f~mv2_d_2768_1384_s_2.png/v1/crop/x_0,y_264,w_2768,h_863/fill/w_304,h_95,al_c,q_80,usm_0.66_1.00_0.01/47074e_e3fd372c95924fc185ce4e614f46669f~mv2_d_2768_1384_s_2.png",
+            "height": 95,
+            "width": 304
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/47074e_fc91557ac96b476aa9487870836a515d~mv2.jpg/v1/fill/w_636,h_477,al_c,q_80,usm_0.66_1.00_0.01/47074e_fc91557ac96b476aa9487870836a515d~mv2.jpg",
+            "height": 477,
+            "width": 636
+        },
+        "location": {
+            "@type": "Place",
+            "name": "SoCal Rafting",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "11101 Kernville Rd.",
+                "addressLocality": "Kernville",
+                "addressRegion": "CA",
+                "addressCountry": "US",
+                "postalCode": 93238
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Monday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Tuesday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Wednesday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Thursday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                }
+            ]
+        }
     }
-  },
-  "image": [{
-    "@type": "ImageObject",
-    "url": "https://i.imgur.com/CObhuByh.jpg",
-    "width": 1024,
-    "height": 863
-  }, {
-    "@type": "ImageObject",
-    "url": "https://i.imgur.com/CObhuByl.jpg",
-    "width": 640,
-    "height": 427
-  }, {
-    "@type": "ImageObject",
-    "url": "https://i.imgur.com/CObhuBym.jpg",
-    "width": 320,
-    "height": 213
-  }],
-  "arrivalTime": ["10:30:00-07:00", "12:00:00-07:00"],
-  "departureTime": ["11:00:00-07:00", "12:30:00-07:00"],
-  "offers": [{
-    "@type": "Offer",
-    "name": "Adult",
-    "price": 57.00,
-    "priceCurrency": "USD",
-    "category": "https://schema.org/LeisureTimeActivity"
-  }, {
-    "@type": "Offer",
-    "name": "Child",
-    "price": 37.50,
-    "priceCurrency": "USD"
-  }]
 }, {
-  "@context": "https://schema.org",
-  "@type": "Trip",
-  "identifier": "50879514-127f-4bc8-9ac2-9300b751988d",
-  "name": "Trip Two",
-  "description": "Row, row, row your boat... AGAIN!",
-  "provider": {
-    "@type": "Organization",
-    "location": {
-      "@type": "Place",
-      "Name": "Acme Rafting Co.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Some St.",
-        "addressLocality": "Nowhere",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      }
+    "@context": "https://schema.org",
+    "@type": "Trip",
+    "name": "Los Angeles Blitz",
+    "url": "https://kernriverrafting.rezgo.com/details/40503/los-angeles-blitz-kern-river-rafting-trip-6-mile",
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Adult",
+            "price": "59.99",
+            "priceCurrency": "USD"
+        },
+        {
+            "@type": "Offer",
+            "name": "Child",
+            "price": "54.99",
+            "priceCurrency": "USD"
+        }
+    ],
+    "arrivalTime": [
+        "09:00",
+        "12:00",
+        "15:00"
+    ],
+    "departureTime": [
+        "09:00",
+        "12:00",
+        "15:00"
+    ],
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://s3.amazonaws.com/rezgo/5602/40503/92563.jpg",
+        "height": 411,
+        "width": 730
+    },
+    "description": "The Los Angeles Blitz is SoCal's double 3 mile Kern River rafting tour. If you're looking for a longer whitewater trip without busting your budget, the Los Angeles Blitz is the right pick. Start your day out with the three-mile Hollywood Hustle. Then your SoCal Kern River Rafting Guide will take you back up to test your white water paddling skills again on more challenging lines and bomb the bigger waves at Big Daddy and Ewings rapids.",
+    "provider": {
+        "@type": "Organization",
+        "name": "SoCal Rafting",
+        "url": "https://www.socalrafting.com/",
+        "email": "booking@socalrafting.com",
+        "telephone": "+1-888-537-6748",
+        "sameAs": [
+            "http://www.facebook.com/kernriverrafting",
+            "https://www.yelp.com/biz/socal-rafting-kernville",
+            "http://instagram.com/kernriverrafting",
+            "http://www.youtube.com/c/socalrafting"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/47074e_e3fd372c95924fc185ce4e614f46669f~mv2_d_2768_1384_s_2.png/v1/crop/x_0,y_264,w_2768,h_863/fill/w_304,h_95,al_c,q_80,usm_0.66_1.00_0.01/47074e_e3fd372c95924fc185ce4e614f46669f~mv2_d_2768_1384_s_2.png",
+            "height": 95,
+            "width": 304
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/47074e_fc91557ac96b476aa9487870836a515d~mv2.jpg/v1/fill/w_636,h_477,al_c,q_80,usm_0.66_1.00_0.01/47074e_fc91557ac96b476aa9487870836a515d~mv2.jpg",
+            "height": 477,
+            "width": 636
+        },
+        "location": {
+            "@type": "Place",
+            "name": "SoCal Rafting",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "11101 Kernville Rd.",
+                "addressLocality": "Kernville",
+                "addressRegion": "CA",
+                "addressCountry": "US",
+                "postalCode": 93238
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Monday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Tuesday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Wednesday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Thursday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                }
+            ]
+        }
     }
-  },
-  "image": [{
-    "@type": "ImageObject",
-    "url": "https://i.imgur.com/CObhuByh.jpg",
-    "width": 1024,
-    "height": 863
-  }, {
-    "@type": "ImageObject",
-    "url": "https://i.imgur.com/CObhuByl.jpg",
-    "width": 640,
-    "height": 427
-  }, {
-    "@type": "ImageObject",
-    "url": "https://i.imgur.com/CObhuBym.jpg",
-    "width": 320,
-    "height": 213
-  }],
-  "arrivalTime": ["10:30:00-07:00", "12:00:00-07:00"],
-  "departureTime": ["11:00:00-07:00", "12:30:00-07:00"],
-  "offers": [{
-    "@type": "Offer",
-    "name": "Adult",
-    "price": 85.00,
-    "priceCurrency": "USD"
-  }, {
-    "@type": "Offer",
-    "name": "Child",
-    "price": 42.75,
-    "priceCurrency": "USD"
-  }]
+}, {
+    "@context": "https://schema.org",
+    "@type": "Trip",
+    "name": "Bakersfield Boogie",
+    "url": "https://kernriverrafting.rezgo.com/details/40504/bakersfield-boogie-kern-river-rafting-trip-12-day-rafting-trip",
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Adult",
+            "price": "74.99",
+            "priceCurrency": "USD"
+        },
+        {
+            "@type": "Offer",
+            "name": "Child",
+            "price": "64.99",
+            "priceCurrency": "USD"
+        }
+    ],
+    "arrivalTime": [
+        "09:00"
+    ],
+    "departureTime": [
+        "09:00"
+    ],
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://s3.amazonaws.com/rezgo/5602/40504/219879.jpg",
+        "height": 411,
+        "width": 730
+    },
+    "description": "The Bakersfield Boogie is SoCal's half day tour of white water rafting. Learn to navigate your way through five rapids that range from class II-III assisted by one our professional river guides on your adventure down the river. The half day tour includes 6 miles of whitewater rafting and a lesisurely lunch that is included in the cost.",
+    "provider": {
+        "@type": "Organization",
+        "name": "SoCal Rafting",
+        "url": "https://www.socalrafting.com/",
+        "email": "booking@socalrafting.com",
+        "telephone": "+1-888-537-6748",
+        "sameAs": [
+            "http://www.facebook.com/kernriverrafting",
+            "https://www.yelp.com/biz/socal-rafting-kernville",
+            "http://instagram.com/kernriverrafting",
+            "http://www.youtube.com/c/socalrafting"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/47074e_e3fd372c95924fc185ce4e614f46669f~mv2_d_2768_1384_s_2.png/v1/crop/x_0,y_264,w_2768,h_863/fill/w_304,h_95,al_c,q_80,usm_0.66_1.00_0.01/47074e_e3fd372c95924fc185ce4e614f46669f~mv2_d_2768_1384_s_2.png",
+            "height": 95,
+            "width": 304
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/47074e_fc91557ac96b476aa9487870836a515d~mv2.jpg/v1/fill/w_636,h_477,al_c,q_80,usm_0.66_1.00_0.01/47074e_fc91557ac96b476aa9487870836a515d~mv2.jpg",
+            "height": 477,
+            "width": 636
+        },
+        "location": {
+            "@type": "Place",
+            "name": "SoCal Rafting",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "11101 Kernville Rd.",
+                "addressLocality": "Kernville",
+                "addressRegion": "CA",
+                "addressCountry": "US",
+                "postalCode": 93238
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Monday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Tuesday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Wednesday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Thursday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                }
+            ]
+        }
+    }
+}, {
+    "@context": "https://schema.org",
+    "@type": "Trip",
+    "name": "Pasadena Paddle Tubing",
+    "url": "https://kernriverrafting.rezgo.com/details/51616/pasadena-paddle-tubing?PROMO=hR5xG",
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Adult",
+            "price": "49",
+            "priceCurrency": "USD"
+        },
+        {
+            "@type": "Offer",
+            "name": "Child",
+            "price": "44",
+            "priceCurrency": "USD"
+        }
+    ],
+    "arrivalTime": [
+        "09:00",
+        "11:30",
+        "14:00"
+    ],
+    "departureTime": [
+        "09:00",
+        "11:30",
+        "14:00"
+    ],
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://s3.amazonaws.com/rezgo/5602/51616/92558.jpg",
+        "height": 411,
+        "width": 730
+    },
+    "description": "The Pasadena Paddle Tubing™adventure is available during the later summer months depending on water levels.\n\nOur professional Kern River guides will provide you with your river gear, a trip overview and instructions for navigating the river, steering and maneuvering a tube and double blade paddle. You will learn how to do tube spins, ferry the river, and splash your best buddies with a special double-sided tubing paddle from inside your own river tube. Your river guide will accompany your group through three miles of low level river rapids navigating the likes of Big Daddy, Sidewinder, Freight Train, and Ewings.\n\nOnce you have completed your guided tube adventure, keep your tube and river gear for the rest of the day. Enjoy the benefit of complimentary river shuttles all day!",
+    "provider": {
+        "@type": "Organization",
+        "name": "SoCal Rafting",
+        "url": "https://www.socalrafting.com/",
+        "email": "booking@socalrafting.com",
+        "telephone": "+1-888-537-6748",
+        "sameAs": [
+            "http://www.facebook.com/kernriverrafting",
+            "https://www.yelp.com/biz/socal-rafting-kernville",
+            "http://instagram.com/kernriverrafting",
+            "http://www.youtube.com/c/socalrafting"
+        ],
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/47074e_e3fd372c95924fc185ce4e614f46669f~mv2_d_2768_1384_s_2.png/v1/crop/x_0,y_264,w_2768,h_863/fill/w_304,h_95,al_c,q_80,usm_0.66_1.00_0.01/47074e_e3fd372c95924fc185ce4e614f46669f~mv2_d_2768_1384_s_2.png",
+            "height": 95,
+            "width": 304
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://static.wixstatic.com/media/47074e_fc91557ac96b476aa9487870836a515d~mv2.jpg/v1/fill/w_636,h_477,al_c,q_80,usm_0.66_1.00_0.01/47074e_fc91557ac96b476aa9487870836a515d~mv2.jpg",
+            "height": 477,
+            "width": 636
+        },
+        "location": {
+            "@type": "Place",
+            "name": "SoCal Rafting",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "11101 Kernville Rd.",
+                "addressLocality": "Kernville",
+                "addressRegion": "CA",
+                "addressCountry": "US",
+                "postalCode": 93238
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Monday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Tuesday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Wednesday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Thursday",
+                    "opens": "08:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "08:00",
+                    "closes": "20:00"
+                }
+            ]
+        }
+    }
 }]

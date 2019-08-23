@@ -12,7 +12,7 @@ class OfferCatelogElement extends HTMLElement {
 			const adult = trip.offers.find(offer => offer.name.toLowerCase() === 'adult');
 			const child = trip.offers.find(offer => offer.name.toLowerCase() === 'child');
 			el.name = trip.name;
-			el.image = trip.image[2];
+			el.image = trip.image;
 			el.identifier = trip.identifier;
 			el.description = trip.description;
 			el.adultPrice = {value: adult.price, currency: adult.priceCurrency};
