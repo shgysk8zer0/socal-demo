@@ -1,7 +1,7 @@
 'use strict';
 
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a2',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a3',
 	stale: [
 		/* Root document */
 		'/',
