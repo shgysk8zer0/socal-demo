@@ -1,6 +1,6 @@
 {
-  "name": "Rafting Demo",
-  "short_name": "Rafting",
+  "name": "SoCal Rafting Demo",
+  "short_name": "SoCal Rafting",
   "version": "1.0.0",
   "start_url": "/",
   "lang": "en",
@@ -19,8 +19,8 @@
     "type": "image/png"
   }],
   "screenshots": [{
-    "src": "https://i.imgur.com/oeKJKPNl.jpg",
-    "sizes": "640x427",
+    "src": "https://i.imgur.com/nkTa4nNl.jpg",
+    "sizes": "640x360",
     "type": "image/jpeg"
   }],
   "theme_color": "#3ba435",

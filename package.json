@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shgysk8zer0/improved-octo-succotash.git"
+    "url": "git+https://github.com/shgysk8zer0/rafting-demo.git"
   },
   "keywords": [
     "static",
@@ -32,9 +32,9 @@
   "author": "Chris Zuber <shgysk8zer0@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shgysk8zer0/improved-octo-succotash/issues"
+    "url": "https://github.com/shgysk8zer0/rafting-demo/issues"
   },
-  "homepage": "https://zealous-cray-ab03c3.netlify.com/",
+  "homepage": "https://optimistic-rosalind-77028f.netlify.com/",
   "scripts": {
     "preinstall": "git submodule update --recursive --init",
     "postinstall": "npm run build:icons",

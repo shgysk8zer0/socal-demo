@@ -36,10 +36,10 @@
 
 	--dialog-border: none;
 
-	--header-bg-full: url("https://i.imgur.com/oeKJKPN.jpg"); /* 4320 x 2880 */
-	--header-bg-h: url("https://i.imgur.com/oeKJKPNh.jpg"); /* 1024 x 683 */
-	--header-bg-l: url("https://i.imgur.com/oeKJKPNl.jpg"); /* 640 x 427 */
-	--header-bg-m: url("https://i.imgur.com/oeKJKPNm.jpg"); /* 320 x 213 */
+	--header-bg-full: url("https://i.imgur.com/nkTa4nN.jpg"); /* 1920 x 1080*/
+	--header-bg-h: url("https://i.imgur.com/nkTa4nNh.jpg"); /* 1024 x 576 */
+	--header-bg-l: url("https://i.imgur.com/nkTa4nNl.jpg"); /* 640 x 360 */
+	--header-bg-m: url("https://i.imgur.com/nkTa4nNm.jpg"); /* 320 x 180 */
 
 	--nav-height: 3.7rem;
 	--header-height: 0;
