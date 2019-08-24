@@ -1,6 +1,7 @@
 [{
     "@context": "https://schema.org",
     "@type": "Trip",
+    "identifier": "5c6b0454-06e2-476d-afa7-f8751c28143e",
     "name": "Hollywood Hustle",
     "url": "https://kernriverrafting.rezgo.com/details/38160/hollywood-hustle-kern-river-rafting-trip-3-mile-tour",
     "offers": [
@@ -118,6 +119,7 @@
 }, {
     "@context": "https://schema.org",
     "@type": "Trip",
+    "identifier": "4dfdc2f4-7c7f-42c3-9dc6-f9b6d290a94f",
     "name": "Los Angeles Blitz",
     "url": "https://kernriverrafting.rezgo.com/details/40503/los-angeles-blitz-kern-river-rafting-trip-6-mile",
     "offers": [
@@ -235,6 +237,7 @@
 }, {
     "@context": "https://schema.org",
     "@type": "Trip",
+    "identifier": "7bd7b9c7-badc-4d79-a733-1d5ac497b188",
     "name": "Bakersfield Boogie",
     "url": "https://kernriverrafting.rezgo.com/details/40504/bakersfield-boogie-kern-river-rafting-trip-12-day-rafting-trip",
     "offers": [
@@ -348,6 +351,7 @@
 }, {
     "@context": "https://schema.org",
     "@type": "Trip",
+    "identifier": "da5a3c3e-92c4-4eb6-8b8a-f2be78f223ba",
     "name": "Pasadena Paddle Tubing",
     "url": "https://kernriverrafting.rezgo.com/details/51616/pasadena-paddle-tubing?PROMO=hR5xG",
     "offers": [
