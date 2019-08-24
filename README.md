@@ -1,5 +1,5 @@
 # [socal-demo](https://optimistic-rosalind-77028f.netlify.com/)
-A quick rafting site demo
+> A demo/testing site for SoCal Rafting
 
 [![Build Status](https://travis-ci.com/shgysk8zer0/socal-demo.svg?branch=master)](https://travis-ci.com/shgysk8zer0/socal-demo)
 [![GitHub license](https://img.shields.io/github/license/shgysk8zer0/socal-demo.svg)](https://github.com/shgysk8zer0/socal-demo/blob/master/LICENSE)
@@ -14,6 +14,9 @@ A quick rafting site demo
 ![GitHub stars](https://img.shields.io/github/stars/shgysk8zer0/socal-demo.svg?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/shgysk8zer0.svg?style=social)
 - - - 
+
+![logo](img/icon-192.png)
+- - -
 
 - [Code of Conduct](./.github/CODE_OF_CONDUCT.md)
 - [Contributing](./.github/CONTRIBUTING.md)
