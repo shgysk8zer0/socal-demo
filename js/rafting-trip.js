@@ -9,7 +9,7 @@ if (! ('PaymentRequest' in window)) {
 class RaftingTripElement extends HTMLElement {
 	constructor() {
 		super();
-		this.setAttribute('itemtype', 'https://schema.org/Event');
+		this.setAttribute('itemtype', 'https://schema.org/Trip');
 		this.setAttribute('itemscope', '');
 		this.attachShadow({mode: 'open'});
 		fetch(new URL('/js/rafting-trip.html', document.baseURI)).then(async resp => {
