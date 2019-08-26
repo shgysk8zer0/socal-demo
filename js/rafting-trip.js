@@ -171,6 +171,7 @@ class RaftingTripElement extends HTMLElement {
 		img.decoding = 'async';
 		img.src = url;
 		img.setAttribute('itemprop', 'image');
+		img.alt = 'image';
 		img.slot = 'image';
 		removeSlottedElements('image', this.shadowRoot);
 		this.append(img);
