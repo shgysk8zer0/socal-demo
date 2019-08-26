@@ -48,13 +48,13 @@
 	</head>
 	<body id="top" class="grid font-main background-primary color-default">
 		<header id="header" class="background-cover background-fixed background-center color-alt">
-			<a href="tel:+1-888-537-6748" id="header-call" class="btn btn-default absolute header-floating-btn">
+			<a href="tel:+1-888-537-6748" id="header-call" aria-label="call" class="btn btn-default absolute header-floating-btn">
 				<svg class="current-color icon">
 					<use xlink:href="/img/icons.svg#call-start" />
 				</svg>
 				<span class="mobile-hidden">(888)-537-6748</span>
 			</a>
-			<a href="mailto:booking@socalrafting.com" id="header-email" class="btn btn-default absolute header-floating-btn">
+			<a href="mailto:booking@socalrafting.com" id="header-email" aria-label="email" class="btn btn-default absolute header-floating-btn">
 				<svg class="current-color icon">
 					<use xlink:href="/img/icons.svg#mail" />
 				</svg>
@@ -78,19 +78,19 @@
 			</div>
 		</header>
 		<nav id="nav" class="sticky top shadow color-alt z-3 clearfix">
-			<button type="button" class="btn btn-primary" is="login-button">
+			<button type="button" class="btn btn-primary" is="login-button" aria-label="Sign In" title="Sign In" hidden="">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#sign-in"></use>
 					<span class="mobile-hidden">Sign In</span>
 				</svg>
 			</button>
-			<button type="button" class="btn btn-primary" is="register-button">
+			<button type="button" class="btn btn-primary" is="register-button" aria-label="Register" title="Register" hidden="">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#contact-new"></use>
 				</svg>
 				<span class="mobile-hidden">Register</span>
 			</button>
-			<button type="button" class="btn btn-reject" is="logout-button" hidden="">
+			<button type="button" class="btn btn-reject" is="logout-button" aria-label="Sign Out" title="Sign Out" hidden="">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#sign-out"></use>
 				</svg>
@@ -203,23 +203,23 @@
 			</div>
 				<hr />
 				<div class="social-links flex row no-wrap">
-					<a href="http://www.facebook.com/kernriverrafting" target="_blank" rel="noopener external" class="inline-block social-link center" itemprop="sameAs">
+					<a href="http://www.facebook.com/kernriverrafting" target="_blank" rel="noopener external" class="inline-block social-link center" aria-label="Facebook" itemprop="sameAs">
 						<svg class="social-icon">
 							<use xlink:href="/img/icons.svg#facebook" />
 						</svg>
 						<span class="mobile-hidden">Facebook</span>
 					</a>
-					<a href="http://instagram.com/kernriverrafting" target="_blank" rel="noopener external" class="inline-block social-link center" itemprop="sameAs">
+					<a href="http://instagram.com/kernriverrafting" target="_blank" rel="noopener external" class="inline-block social-link center" aria-label="Instagram" itemprop="sameAs">
 						<img src="/img/logos/instagram.svg" class="social-icon" decoding="async" alt="Instagram" />
 						<span class="mobile-hidden">Instagram</span>
 					</a>
-					<a href="http://www.youtube.com/c/socalrafting" target="_blank" rel="noopener external" class="inline-block social-link center" itemprop="sameAs">
+					<a href="http://www.youtube.com/c/socalrafting" target="_blank" rel="noopener external" class="inline-block social-link center" aria-label="YouTube" itemprop="sameAs">
 						<svg class="social-icon">
 							<use xlink:href="/img/icons.svg#youtube" />
 						</svg>
 						<span class="mobile-hidden">YouTube</span>
 					</a>
-					<a href="https://www.yelp.com/biz/socal-rafting-kernville" target="_blank" rel="noopener external" class="inline-block social-link center" itemprop="sameAs">
+					<a href="https://www.yelp.com/biz/socal-rafting-kernville" target="_blank" rel="noopener external" class="inline-block social-link center" aria-label="Yelp" itemprop="sameAs">
 						<svg class="social-icon">
 							<use xlink:href="/img/icons.svg#yelp" />
 						</svg>
@@ -234,7 +234,7 @@
 				<span itemprop="copyrightHolder">SoCal Rafting</span>
 			</div>
 		</footer>
-		<button type="button" is="share-button" class="round shadow fixed z-4" aria-label="Share">
+		<button type="button" is="share-button" class="round shadow fixed z-4" aria-label="Share" hidden="">
 			<svg class="current-color icon">
 				<use xlink:href="/img/icons.svg#public-share"></use>
 			</svg>
