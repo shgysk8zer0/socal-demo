@@ -13,11 +13,12 @@ class OfferCatelogElement extends HTMLElement {
 			const child = trip.offers.find(offer => offer.name.toLowerCase() === 'child');
 			el.name = trip.name;
 			el.image = trip.image;
+			el.url = trip.url;
 			el.identifier = trip.identifier;
 			el.description = trip.description;
 			el.adultPrice = {value: adult.price, currency: adult.priceCurrency};
 			el.childPrice = {value: child.price, currency: child.priceCurrency};
-			el.departureTimes = trip.departureTime;
+			// el.departureTimes = trip.departureTime;
 			return el;
 		}));
 		this.append(...els);
