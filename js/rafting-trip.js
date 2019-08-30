@@ -1,10 +1,10 @@
-import {$} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
-import PaymentRequestShim from 'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js';
+// import {$} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+// import PaymentRequestShim from 'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js';
 import {getSlotContent, removeSlottedElements} from './slot-helpers.js';
-import 'https://cdn.kernvalley.us/components/toast-message.js';
-if (! ('PaymentRequest' in window)) {
-	window.PaymentRequest = PaymentRequestShim;
-}
+// import 'https://cdn.kernvalley.us/components/toast-message.js';
+// if (! ('PaymentRequest' in window)) {
+// 	window.PaymentRequest = PaymentRequestShim;
+// }
 
 class RaftingTripElement extends HTMLElement {
 	constructor() {
@@ -12,83 +12,84 @@ class RaftingTripElement extends HTMLElement {
 		this.setAttribute('itemtype', 'https://schema.org/Trip');
 		this.setAttribute('itemscope', '');
 		this.attachShadow({mode: 'open'});
+
 		fetch(new URL('/js/rafting-trip.html', document.baseURI)).then(async resp => {
 			const parser = new DOMParser();
 			const html = await resp.text();
 			const doc = parser.parseFromString(html, 'text/html');
 
-			$('form', doc).submit(async event => {
-				event.preventDefault();
-				const terms = document.getElementById('instructions');
-				const {adults, children, departureTime, date, identifier} = Object.fromEntries(new FormData(event.target).entries());
-				const displayItems = [{
-					label: `Adults (${adults})`,
-					amount: {
-						currency: 'USD',
-						value: parseInt(adults) * this.adultPrice
-					}
-				},{
-					label: `Children (${children})`,
-					amount: {
-						currency: 'USD',
-						value: parseInt(children) * this.childPrice
-					}
-				}];
-				const paymentRequest = new PaymentRequest([{
-					supportedMethods: 'basic-card',
-					data: {
-						supportedNetworks: ['visa', 'mastercard','discover'],
-						supportedTypes: ['credit', 'debit']
-					}
-				}], {
-					displayItems,
-					total: {
-						label: 'Total Cost',
-						amount: {
-							currency: 'USD',
-							value: displayItems.reduce((sum, item) => sum + item.amount.value, 0),
-						}
-					}
-				}, {
-					requestPayerName: true,
-					requestPayerEmail: true,
-					requestPayerPhone: true,
-				});
+			// $('form', doc).submit(async event => {
+			// 	event.preventDefault();
+			// 	const terms = document.getElementById('instructions');
+			// 	const {adults, children, departureTime, date, identifier} = Object.fromEntries(new FormData(event.target).entries());
+			// 	const displayItems = [{
+			// 		label: `Adults (${adults})`,
+			// 		amount: {
+			// 			currency: 'USD',
+			// 			value: parseInt(adults) * this.adultPrice
+			// 		}
+			// 	},{
+			// 		label: `Children (${children})`,
+			// 		amount: {
+			// 			currency: 'USD',
+			// 			value: parseInt(children) * this.childPrice
+			// 		}
+			// 	}];
+			// 	const paymentRequest = new PaymentRequest([{
+			// 		supportedMethods: 'basic-card',
+			// 		data: {
+			// 			supportedNetworks: ['visa', 'mastercard','discover'],
+			// 			supportedTypes: ['credit', 'debit']
+			// 		}
+			// 	}], {
+			// 		displayItems,
+			// 		total: {
+			// 			label: 'Total Cost',
+			// 			amount: {
+			// 				currency: 'USD',
+			// 				value: displayItems.reduce((sum, item) => sum + item.amount.value, 0),
+			// 			}
+			// 		}
+			// 	}, {
+			// 		requestPayerName: true,
+			// 		requestPayerEmail: true,
+			// 		requestPayerPhone: true,
+			// 	});
 
-				await customElements.whenDefined('toast-message');
-				await terms.show();
-				await terms.closed;
+			// 	await customElements.whenDefined('toast-message');
+			// 	await terms.show();
+			// 	await terms.closed;
 
-				if (await paymentRequest.canMakePayment()) {
-					try {
-						const paymentResponse = await paymentRequest.show();
-						paymentResponse.complete('success');
-						$('#payment-dialog').remove();
-						console.log(paymentResponse);
-						await customElements.whenDefined('toast-message');
-						const Toast = customElements.get('toast-message');
-						const pre = document.createElement('pre');
-						const code = document.createElement('code');
-						const toast = new Toast();
-						pre.slot = 'content';
-						code.textContent = JSON.stringify({identifier, adults, children, departureTime, date, paymentResponse}, null, 4);
-						pre.append(code);
-						toast.append(pre);
-						document.body.append(toast);
-						await toast.show();
-						await toast.closed;
-						toast.remove();
-					} catch(err) {
-						console.error(err);
-						$('#payment-dialog').remove();
-						await customElements.whenDefined('toast-message');
-						const Toast = customElements.get('toast-message');
-						Toast.toast(err.message);
-					} finally {
-						$('#payment-dialog').remove();
-					}
-				}
-			});
+			// 	if (await paymentRequest.canMakePayment()) {
+			// 		try {
+			// 			const paymentResponse = await paymentRequest.show();
+			// 			paymentResponse.complete('success');
+			// 			$('#payment-dialog').remove();
+			// 			console.log(paymentResponse);
+			// 			await customElements.whenDefined('toast-message');
+			// 			const Toast = customElements.get('toast-message');
+			// 			const pre = document.createElement('pre');
+			// 			const code = document.createElement('code');
+			// 			const toast = new Toast();
+			// 			pre.slot = 'content';
+			// 			code.textContent = JSON.stringify({identifier, adults, children, departureTime, date, paymentResponse}, null, 4);
+			// 			pre.append(code);
+			// 			toast.append(pre);
+			// 			document.body.append(toast);
+			// 			await toast.show();
+			// 			await toast.closed;
+			// 			toast.remove();
+			// 		} catch(err) {
+			// 			console.error(err);
+			// 			$('#payment-dialog').remove();
+			// 			await customElements.whenDefined('toast-message');
+			// 			const Toast = customElements.get('toast-message');
+			// 			Toast.toast(err.message);
+			// 		} finally {
+			// 			$('#payment-dialog').remove();
+			// 		}
+			// 	}
+			// });
 			this.shadowRoot.append(...doc.head.children, ...doc.body.children);
 			this.dispatchEvent(new Event('ready'));
 		});
@@ -114,7 +115,7 @@ class RaftingTripElement extends HTMLElement {
 
 	set identifier(uuid) {
 		this.id = uuid;
-		this.shadowRoot.querySelector('[name="identifier"]').value = uuid;
+		// this.shadowRoot.querySelector('[name="identifier"]').value = uuid;
 	}
 
 	set description(val) {
@@ -175,6 +176,10 @@ class RaftingTripElement extends HTMLElement {
 		img.slot = 'image';
 		removeSlottedElements('image', this.shadowRoot);
 		this.append(img);
+	}
+
+	set url(url) {
+		this.shadowRoot.querySelector('.book-link').href = url;
 	}
 }
 

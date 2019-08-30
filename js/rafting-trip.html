@@ -17,6 +17,10 @@
 				background: none;
 				border: none;
 			}
+
+			a[role="button"] {
+				text-decoration: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -28,40 +32,59 @@
 			<slot name="description">
 				<blockquote>No description available</blockquote>
 			</slot>
-			<form name="bookings">
-				<input type="hidden" name="identifier" />
-				<div class="form-group block">
-					<label for="date">
-						<svg class="current-color icon" viewBox="0 0 14 16">
-							<path fill-rule="evenodd" d="M13 2h-1v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H6v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H2c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1h11c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 12H2V5h11v9zM5 3H4V1h1v2zm6 0h-1V1h1v2zM6 7H5V6h1v1zm2 0H7V6h1v1zm2 0H9V6h1v1zm2 0h-1V6h1v1zM4 9H3V8h1v1zm2 0H5V8h1v1zm2 0H7V8h1v1zm2 0H9V8h1v1zm2 0h-1V8h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1zm2 0h-1v-1h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1z"/>
-						</svg>
-						<span class="mobile-hidden">Date</span>
-					</label>
-					<input type="date" name="date" id="date" placeholder="yyyy-mm-dd" aria-label="Select departure date" required="" />
-					<select name="departureTime" aria-label="Select departure time" required="">
-						<option value="">Select a time</option>
-					</select>
-				</div>
-				<div class="flex row no-wrap">
-					<div class="form-group inline-block">
-						<label for="adults">Adults: <slot name="adultPrice"></slot></label>
-						<input id="adults" type="number" min="1" placeholder="##" max="99" name="adults" aria-label="Number of adults" required="" />
+			<div class="clearfix">
+				<div class="float-left">
+					<div>
+						<b>Adults:</b>
+						<slot name="adultPrice"></slot>
 					</div>
-					<div class="form-group inline-block">
-						<label for="children">Children: <slot name="childPrice"></slot></label>
-						<input type="number" id="children" name="children" placeholder="##" min="0" max="99" aria-label="Number of children" required="" />
+					<div>
+						<b>Children:</b>
+						<slot name="childPrice"></slot>
 					</div>
 				</div>
-				<br />
-				<div class="clearfix">
-					<button type="submit" class="btn btn-accept float-right">
-						<svg class="current-color icon" viewBox="0 0 16 16">
-							<path fill-rule="evenodd" d="M12 9H2V8h10v1zm4-6v9c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h14c.55 0 1 .45 1 1zm-1 3H1v6h14V6zm0-3H1v1h14V3zm-9 7H2v1h4v-1z"/>
-						</svg>
-						<span>Book</span>
-					</button>
-				</div>
-			</form>
+				<a href="" role="button" class="btn btn-accept inline-block float-right book-link" target="_blank">
+					<svg class="current-color icon" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M12 9H2V8h10v1zm4-6v9c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h14c.55 0 1 .45 1 1zm-1 3H1v6h14V6zm0-3H1v1h14V3zm-9 7H2v1h4v-1z"/>
+					</svg>
+					<span>Book</span>
+				</a>
+			</div>
+			<br />
+			<!-- <form name="bookings" hidden=""> -->
+			<!-- 	<input type="hidden" name="identifier" /> -->
+			<!-- 	<div class="form-group block"> -->
+			<!-- 		<label for="date"> -->
+			<!-- 			<svg class="current-color icon" viewBox="0 0 14 16"> -->
+			<!-- 				<path fill-rule="evenodd" d="M13 2h-1v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H6v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H2c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1h11c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 12H2V5h11v9zM5 3H4V1h1v2zm6 0h-1V1h1v2zM6 7H5V6h1v1zm2 0H7V6h1v1zm2 0H9V6h1v1zm2 0h-1V6h1v1zM4 9H3V8h1v1zm2 0H5V8h1v1zm2 0H7V8h1v1zm2 0H9V8h1v1zm2 0h-1V8h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1zm2 0h-1v-1h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1z"/> -->
+			<!-- 			</svg> -->
+			<!-- 			<span class="mobile-hidden">Date</span> -->
+			<!-- 		</label> -->
+			<!-- 		<input type="date" name="date" id="date" placeholder="yyyy-mm-dd" aria-label="Select departure date" required="" /> -->
+			<!-- 		<select name="departureTime" aria-label="Select departure time" required=""> -->
+			<!-- 			<option value="">Select a time</option> -->
+			<!-- 		</select> -->
+			<!-- 	</div> -->
+			<!-- 	<div class="flex row no-wrap"> -->
+			<!-- 		<div class="form-group inline-block"> -->
+			<!-- 			<label for="adults">Adults: <slot name="adultPrice"></slot></label> -->
+			<!-- 			<input id="adults" type="number" min="1" placeholder="##" max="99" name="adults" aria-label="Number of adults" required="" /> -->
+			<!-- 		</div> -->
+			<!-- 		<div class="form-group inline-block"> -->
+			<!-- 			<label for="children">Children: <slot name="childPrice"></slot></label> -->
+			<!-- 			<input type="number" id="children" name="children" placeholder="##" min="0" max="99" aria-label="Number of children" required="" /> -->
+			<!-- 		</div> -->
+			<!-- 	</div> -->
+			<!-- 	<br /> -->
+			<!-- 	<div class="clearfix"> -->
+			<!-- 		<button type="submit" class="btn btn-accept float-right"> -->
+			<!-- 			<svg class="current-color icon" viewBox="0 0 16 16"> -->
+			<!-- 				<path fill-rule="evenodd" d="M12 9H2V8h10v1zm4-6v9c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h14c.55 0 1 .45 1 1zm-1 3H1v6h14V6zm0-3H1v1h14V3zm-9 7H2v1h4v-1z"/> -->
+			<!-- 			</svg> -->
+			<!-- 			<span>Book</span> -->
+			<!-- 		</button> -->
+			<!-- 	</div> -->
+			<!-- </form> -->
 		</div>
 	</body>
 </html>
