@@ -1,7 +1,7 @@
 #footer {
 	grid-area: footer;
 	padding: 1.4em;
-	background: var(--contrast-color);
+	background: var(--primary-color-dark);
 }
 
 .social-links {
